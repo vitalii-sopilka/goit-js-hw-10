@@ -56,7 +56,7 @@ function onChange(event) {
 }
 
 function createCatMarkup(catInfo) {
-  return `
+return `
 <div class="js-part">
 <div class="img-part">
   <img src="${catInfo.url}" alt="${catInfo.breeds[0].name}" class="cat-img"/>
@@ -70,5 +70,5 @@ function createCatMarkup(catInfo) {
     </p>
   </div>
 </div>
-  `;
+`;
 }
