@@ -13,22 +13,22 @@ window.addEventListener('load', onLoad);
 
 function onLoad() {
   fetchBreeds('cats')
-    .then(resp => {
-      const markup = makeSelectMarkup(resp);
-      addMarkup(selectEl, markup);
-      new SlimSelect({
-        select: '#selectElement',
-      });
-    })
-    .catch(error => console.log(error.message));
+  .then(resp => {
+    const markup = makeSelectMarkup(resp);
+    addMarkup(selectEl, markup);
+    new SlimSelect({
+      select: '#selectElement',
+    });
+  })
+  .catch(error => console.log(error.message));
 }
 
 function makeSelectMarkup(items) {
   return items
-    .map(({ id, name }) => {
-      return `<option value="${id}">🐈‍⬛ - ${name}</option>`;
-    })
-    .join('');
+  .map(({ id, name }) => {
+    return `<option value="${id}">🐈‍⬛ - ${name}</option>`;
+  })
+  .join('');
 }
 
 function addMarkup(ref, markup) {
@@ -42,17 +42,17 @@ function onChange(event) {
   loaderEl.classList.add('display');
 
   fetchCatByBreed(id)
-    .then(response => {
-      const catInfo = response[0];
-      const catMarkup = createCatMarkup(catInfo);
-      catContainer.innerHTML = catMarkup;
-      loaderEl.classList.remove('display');
-    })
-    .catch(() => {
-      Notiflix.Notify.failure(
-        'Oops! Something went wrong! Try reloading the page!'
-      );
-    });
+  .then(response => {
+    const catInfo = response[0];
+    const catMarkup = createCatMarkup(catInfo);
+    catContainer.innerHTML = catMarkup;
+    loaderEl.classList.remove('display');
+  })
+  .catch(() => {
+    Notiflix.Notify.failure(
+      'Oops! Something went wrong! Try reloading the page!'
+    );
+  });
 }
 
 function createCatMarkup(catInfo) {
