@@ -1,0 +1,120 @@
+.loader {
+  display: none;
+    animation: rotate 2s infinite;
+    height: 70px;
+    width: 70px;
+    margin-left: 140px;
+  }
+
+.loader.display{
+  display: block;
+}
+
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+.loader:before {
+  animation: ball1 1s infinite;
+  background-color: #ffd700;
+  box-shadow: 30px 0 0 #0057b7;
+  margin-bottom: 10px;
+}
+
+.loader:after {
+  animation: ball2 1s infinite;
+  background-color: #0057b7;
+  box-shadow: 30px 0 0 #ffd700;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(0.8) }
+  50% { transform: rotate(360deg) scale(1.2) }
+  100% { transform: rotate(720deg) scale(0.8) }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #0057b7;
+  }
+  50% {
+    box-shadow: 0 0 0 #0057b7;
+    margin-bottom: 0;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #0057b7;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #ffd700;
+  }
+  50% {
+    box-shadow: 0 0 0 #ffd700;
+    margin-top: -20px;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #ffd700;
+    margin-top: 0;
+  }
+}
+
+/*  */
+
+.error {
+  /* display: none; */
+}
+
+.breed-select {
+  margin: 20px;
+  max-width: 300px;
+}
+
+.js-part {
+  display: flex;
+}
+
+.temperament {
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.info-part {
+  max-width: 600px;
+  height: auto;
+  margin-left: 20px;
+}
+
+.cat-text{
+  margin-left: 10px;
+}
+
+.img-part{
+  width: 500px;
+  height: auto;
+  overflow: hidden;
+  background-color:transparent;
+  margin: 5px;
+}
+
+.cat-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
